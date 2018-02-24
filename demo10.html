@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+     .redFont{
+        color:red;
+        font-size:14px;
+    }
+    .blueBG {
+        background:blue;
+        border:solid 1px orange;
+    }
+</style>
+<body>
+    <div id='div'>
+        <div v-bind:class="{redFont:redFont,blueBG:blueBG}">要绑定类名的div</div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    new Vue({
+        el: "#div",
+        data: {
+            redFont:true,
+            blueBG:true
+        },
+        mouted:function(){
+            
+        }
+    });
+
+    let arguments=[3,2,3]
+    let obj = {
+      getInfo:(p1,p2,p3)=>{
+           return {
+               p1:p1 || 10,
+               p2:p2 || 20,
+               p3:p3 || 30
+           }
+      },
+      showName:name=>'我的名字'+name+'，记住哟',
+      showFriends:()=>{
+        let arr = [];
+        for (var i of arguments){
+            arr.push(i)
+        }
+        //返回所有参数的数组
+        return arr;
+      }
+   }
+   console.log(obj.getInfo(15,20,30))
+   console.log(obj.showName(123))
+   console.log(obj.showFriends())
+</script>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="test" value="12 34">
+</body>
+<script>
+    var test=document.getElementById('test');
+    if (/^[\su4E00-\u9FA5A-Za-z0-9]{1,15}$/.test(test.value) ){
+        console.log('正确')
+    }else{
+        console.log('错误')
+    }
+</script>
+</html>
